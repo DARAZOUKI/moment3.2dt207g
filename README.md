@@ -11,7 +11,7 @@ The project structure is organized as follows:
     * server.js: JavaScript file containing client-side code for interacting with the web service and handling user interactions.
     * script.js: JavaScript file containing functions for fetching and displaying work experiences.
     * src/: Directory containing static assets (index.html, add.html, about.html, styles.css, script.js.
-* README.md: This file providing an overview of the project and instructions for running the application.
+    * README.md: This file providing an overview of the project and instructions for running the application.
 
 # Functionalities
 ## Fetching Work Experiences
