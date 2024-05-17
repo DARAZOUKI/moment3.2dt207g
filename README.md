@@ -14,13 +14,13 @@ The project structure is organized as follows:
     * README.md: This file providing an overview of the project and instructions for running the application.
 
 # Functionalities
-## Fetching Work Experiences
+### Fetching Work Experiences
 
 The web application utilizes the Fetch API to retrieve existing work experiences from the web service. When the application loads, it sends a GET request to the /workexperiences endpoint to fetch all records, which are then displayed on the index.html page.
-## Adding Work Experiences
+### Adding Work Experiences
 
 Users can add new work experiences through the add.html page, which contains a form for inputting details such as company name, job title, location, start date, end date, and description. Upon form submission, the application sends a POST request to the /workexperiences endpoint with the form data, and upon successful addition, the user receives a confirmation message.
-## Deleting Work Experiences
+### Deleting Work Experiences
 
 Each work experience displayed on the index.html page is accompanied by a delete button. When clicked, this button triggers a DELETE request to the /workexperiences/:id endpoint, where :id represents the unique identifier of the work experience. Upon successful deletion, the respective record is removed from the list.
 #Deployment
