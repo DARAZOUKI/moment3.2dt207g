@@ -135,18 +135,39 @@ h1 {
   margin-top: 20px;
 }
 
+/* Work experience list styles */
 #work-experience-list {
-  padding: 40px;
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #ccc; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 400px;
-  display: block;
-  list-style: circle;
-  margin-bottom: 40px;
-  
+  list-style: none;
+}
+
+#work-experience-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+#work-experience-list li:last-child {
+  border-bottom: none;
+}
+
+#work-experience-list div {
+  flex-grow: 1;
+}
+
+#work-experience-list button {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#work-experience-list button:hover {
+  background-color: #ff4500;
 }
 
 

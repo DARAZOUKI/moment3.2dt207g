@@ -6,7 +6,10 @@ const apiUrl = 'https://moment3-2dt207g.onrender.com/workexperiences';
 async function fetchWorkExperiences() {
   try {
     const response = await fetch(apiUrl, {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
     });
     const workExperiences = await response.json();
 
