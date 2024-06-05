@@ -127,50 +127,54 @@ nav  ul li {
 
 
 a:hover {
-  color: #ffc107;
+  color: #130a0a;
 }
 
 h1 {
   text-align: center;
   margin-top: 20px;
 }
-
-/* Work experience list styles */
-#work-experience-list {
-  list-style: none;
+.work-experience-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#work-experience-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+.work-experience-list {
+  list-style: none;
+  padding: 0;
+}
+
+.work-experience-list li {
+  padding: 1em;
+  margin-bottom: 1em;
   border-bottom: 1px solid #ddd;
 }
 
-#work-experience-list li:last-child {
+.work-experience-list li:last-child {
   border-bottom: none;
 }
 
-#work-experience-list div {
-  flex-grow: 1;
+.work-experience-list .details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#work-experience-list button {
-  background-color: #ff6347;
-  color: #fff;
+.work-experience-list .details-container .delete-button {
+  background-color: #ff4d4d;
+  color: white;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-#work-experience-list button:hover {
-  background-color: #ff4500;
+.work-experience-list .details-container .delete-button:hover {
+  background-color: #ff1a1a;
 }
-
-
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -198,7 +202,7 @@ textarea {
 }
 
 button[type="submit"] {
-  background-color: #007bff;
+  background-color: #ea4646;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -207,7 +211,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #e16161;
 }
 /* Container for content */
 .container {
@@ -295,6 +299,7 @@ button[type="submit"]:hover {
       border-radius: 5px;
       cursor: pointer;
       margin-right: 0;
+      color: #ccc;
   }
 header{
   margin-left: 0;
@@ -333,6 +338,7 @@ nav li {
     border-radius: 5px;
     cursor: pointer;
     margin-right: 0;
+    color: #ccc;
 }
 }
 
