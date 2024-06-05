@@ -9,7 +9,7 @@ require('dotenv').config();
 // Create an Express application
 const app = express();
 app.use(bodyParser.json());
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8000;
 
 // Middleware
 app.use(cors());
