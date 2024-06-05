@@ -1,9 +1,13 @@
-const apiUrl = 'http://localhost:9000/workexperiences';
+//script.js
+
+const apiUrl = 'http://localhost:4000/workexperiences';
 
 // Function to fetch and display all work experiences
 async function fetchWorkExperiences() {
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      method: 'GET'
+    });
     const workExperiences = await response.json();
 
     const workExperienceList = document.getElementById('work-experience-list');
@@ -11,14 +15,29 @@ async function fetchWorkExperiences() {
 
     workExperiences.forEach(experience => {
       const listItem = document.createElement('li');
-      listItem.textContent = `${experience.companyname} - ${experience.jobtitle} (${experience.location})`;
+      
+      // Create a container for the work experience details
+      const detailsContainer = document.createElement('div');
+      
+      // Display work experience details
+      detailsContainer.textContent = `${experience.companyname} - ${experience.jobtitle} (${experience.location})`;
       workExperienceList.appendChild(listItem);
+      // Create a delete button
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', () => deleteWorkExperience(experience._id));
+      
+  
+      detailsContainer.appendChild(deleteButton);
+      
+      listItem.appendChild(detailsContainer);
+      
+     
     });
   } catch (error) {
     console.error('Error fetching work experiences:', error);
   }
 }
-
 // Function to handle form submission for adding a new work experience
 async function addWorkExperience(event) {
   event.preventDefault();
@@ -66,47 +85,12 @@ async function deleteWorkExperience(id) {
   }
 }
 
-// Function to fetch and display all work experiences
-async function fetchWorkExperiences() {
-  try {
-    const response = await fetch(apiUrl);
-    const workExperiences = await response.json();
-
-    const workExperienceList = document.getElementById('work-experience-list');
-    workExperienceList.innerHTML = '';
-
-    workExperiences.forEach(experience => {
-      const listItem = document.createElement('li');
-      
-      // Create a container for the work experience details
-      const detailsContainer = document.createElement('div');
-      
-      // Display work experience details
-      detailsContainer.textContent = `${experience.companyname} - ${experience.jobtitle} (${experience.location})`;
-      
-      // Create a delete button
-      const deleteButton = document.createElement('button');
-      deleteButton.textContent = 'Delete';
-      deleteButton.addEventListener('click', () => deleteWorkExperience(experience._id));
-      
-  
-      detailsContainer.appendChild(deleteButton);
-      
-      listItem.appendChild(detailsContainer);
-      
-      workExperienceList.appendChild(listItem);
-    });
-  } catch (error) {
-    console.error('Error fetching work experiences:', error);
-  }
-}
 // Attach event listeners
 document.addEventListener('DOMContentLoaded', () => {
   fetchWorkExperiences(); // Fetch work experiences when the page loads
-
+});
 
 const addWorkForm = document.getElementById('add-work-form');
 if (addWorkForm) {
   addWorkForm.addEventListener('submit', addWorkExperience);
 }
-});
