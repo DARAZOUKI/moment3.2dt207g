@@ -2,8 +2,6 @@
 
 let openBtn = document.getElementById("open-menu");
 
-
-
 openBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
